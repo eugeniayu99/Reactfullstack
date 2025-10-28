@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Height 속성 실습</title>
+<style>
+.container {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+}
+
+/* 공통 박스 스타일 */
+.box {
+  width: 150px;
+  background-color: #74b9ff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* 각각 다른 height 설정 */
+.fixed {
+  height: 100px; /* 고정 높이 */
+}
+
+.min {
+  min-height: 100px; /* 최소 높이 */
+}
+
+.max {
+  max-height: 100px; /* 최대 높이 */
+  overflow-y: auto;  /* 내용이 넘칠 때 스크롤 표시 */
+}
+
+.auto {
+  height: auto; /* 내용에 따라 자동 조정 */
+}
+</style>
+</head>
+<body>
+  <h1>Height 속성 실습</h1>
+  <div class="container">
+    <div class="box fixed">
+      <strong>height: 100px</strong><br>
+      고정된 높이입니다.<br>
+      내용이 많아도 늘어나지 않습니다.
+    </div>
+    <div class="box min">
+      <strong>min-height: 100px</strong><br>
+      내용이 적을 때는<br>100px 유지,<br>
+      내용이 많으면 늘어납니다.<br><br>
+      추가 콘텐츠 추가 콘텐츠 추가 콘텐츠
+    </div>
+    <div class="box max">
+      <strong>max-height: 100px</strong><br>
+      내용이 많으면 스크롤이 생깁니다.<br><br>
+      추가 콘텐츠 추가 콘텐츠 추가 콘텐츠 추가 콘텐츠 추가 콘텐츠 추가 콘텐츠 추가 콘텐츠
+    </div>
+    <div class="box auto">
+      <strong>height: auto</strong><br>
+      콘텐츠 양에 따라 높이가<br>자동으로 늘어납니다.<br><br>
+      추가 콘텐츠 추가 콘텐츠 추가 콘텐츠 추가 콘텐츠
+    </div>
+  </div>
+</body>
+</html>
