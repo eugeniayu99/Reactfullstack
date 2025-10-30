@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+div{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: #fff;
+    border: 2px solid #000;
+    margin: 10px;
+}      
+.a{ 
+    background-color: #c0ff12;
+}
+.b{
+    background-color: #ff37f5;
+}
+.c{
+    background-color: #182fff;
+}
+.d{
+    background-color: #ffa318;
+}
+.e{
+    background-color: #ffdb39;
+}
+.f{
+    background-color: #5b05a1;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flexbox align-items 실습</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            background: #f5f7fa;
+            color: #2c3e50;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .guide {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin: 24px 0 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-left: 6px solid #3498db;
+            padding-left: 10px;
+        }
+
+        /* 공통 flex 컨테이너 스타일 */
+        .flex-demo {
+            display: flex;
+            border: 2px dashed #000;
+            background: #ecf0f1;
+            min-height: 140px;     /* 세로 여유를 줘서 정렬 차이가 보이게 함 */
+            margin-bottom: 24px;
+            padding: 10px;
+        }
+
+        /* 아이템 공통 스타일 */
+        .item {
+            width: 100px;
+            margin: 10px;
+            color: white;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 6px;
+            font-weight: bold;
+            padding: 10px 0; /* height를 고정하지 않고 padding으로만 크기를 확보 */
+        }
+
+        /* 색상 + 개별 폰트 크기 */
+        .a { background: red; }
+        .b { background: yellow; color: black; font-size: 36px; }
+        .c { background: blue; font-size: 90px; }
+        .d { background: green; font-size: 50px; }
+        .e { background: violet; font-size: 10px; color: black; }
+
+        /* align-items 실험용 클래스 */
+        .ai-stretch   { align-items: stretch; }
+        .ai-flex-start{ align-items: flex-start; }
+        .ai-center    { align-items: center; }
+        .ai-flex-end  { align-items: flex-end; }
+        .ai-baseline  { align-items: baseline; }
+    </style>
+</head>
+<body>
+    <h1>align-items</h1>
+    <p class="guide">
+        align-items는 flex 아이템들을 컨테이너의 교차축(기본은 세로축) 방향으로 어떻게 정렬할지 결정한다<br/>
+        글자 크기가 다를 때 / 아이템 높이가 다를 때 차이를 관찰하면 이해가 쉽다
+    </p>
+
+    <h2>stretch (가능한 높이 전체를 늘림)</h2>
+    <section class="flex-demo ai-stretch">
+        <div class="item a">a</div>
+        <div class="item b">b</div>
+        <div class="item c">c</div>
+        <div class="item d">d</div>
+        <div class="item e">e</div>
+    </section>
+
+    <h2>flex-start (위쪽 정렬)</h2>
+    <section class="flex-demo ai-flex-start">
+        <div class="item a">a</div>
+        <div class="item b">b</div>
+        <div class="item c">c</div>
+        <div class="item d">d</div>
+        <div class="item e">e</div>
+    </section>
+
+    <h2>center (세로 가운데 정렬)</h2>
+    <section class="flex-demo ai-center">
+        <div class="item a">a</div>
+        <div class="item b">b</div>
+        <div class="item c">c</div>
+        <div class="item d">d</div>
+        <div class="item e">e</div>
+    </section>
+
+    <h2>flex-end (아래쪽 정렬)</h2>
+    <section class="flex-demo ai-flex-end">
+        <div class="item a">a</div>
+        <div class="item b">b</div>
+        <div class="item c">c</div>
+        <div class="item d">d</div>
+        <div class="item e">e</div>
+    </section>
+
+    <h2>baseline (문자의 밑줄선 기준으로 정렬)</h2>
+    <section class="flex-demo ai-baseline">
+        <div class="item a">a</div>
+        <div class="item b">b</div>
+        <div class="item c">c</div>
+        <div class="item d">d</div>
+        <div class="item e">e</div>
+    </section>
+</body>
+</html>
