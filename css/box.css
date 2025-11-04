@@ -5,7 +5,7 @@ div{
     height: 100px;
     text-align: center;
     color: #fff;
-    border: 2px solid #000;
+    border: 1px solid #000;
     margin: 10px;
 }      
 .a{ 
@@ -26,3 +26,4 @@ div{
 .f{
     background-color: #5b05a1;
 }
+

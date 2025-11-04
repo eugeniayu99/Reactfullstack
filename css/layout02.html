@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; list-style: none; box-sizing: border-box;}
+        /* box-sizing: border-box >> 내용 + 패딩 + 테두리를 모도 포함한 값으로 취급하게 하는 속성 */
+        /**** header ****/
+        header{background: #e9eef1; padding: 10px 0;}
+        header h1{color: #000; text-align: center;}
+        /**** main ****/
+        main{padding: 10px;}
+        /** section **/
+         section {border: 1px solid #c0c0c0; display: flex; align-items: center; border-radius: 10px; max-width: 1000px; margin: 0 auto;}
+        /* section - first */
+        section.first{border: 1px solid #c0c0c0; display: flex; align-items: center; border-radius: 10px;}
+        section.first .txtBox{flex: 7; margin: 10px;}
+        section.first .imgBox{flex: 3; background: #dfe6e8; height: 180px; margin: 10px; text-align: center; line-height: 180px; border-radius: 10px;}
+        /* section - second */
+        section.second{flex-wrap: wrap; gap: 15px; margin-top: 30px; padding: 10px;}
+        section.second article{flex: 1 1 280px; border: 1px solid #c4c8cc; border-radius: 10px; background: #fff; padding: 16px;}
+        /* flex-grow, flex-shrink, flex-basis 속성의 단축버전 */
+        
+        /**** footer ****/
+        footer{background: #f1f3f4; padding: 10px 0;}
+        footer p{color: #585858; text-align: center; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Brand Landing다</h1>
+    </header>
+    <main>
+        <section class="first">
+            <div class="txtBox">
+                <h3>간결한 메시지로 주목을 끈다다</h3>
+                <p>핵심 가치와 행동 유도 문구를 짧고 명확하게 배치한다다</p>
+            </div>
+            <div class="imgBox">
+                <p>640x360 자리다</p>
+            </div>
+        </section>
+        <section class="second">
+            <h3>핵심 기능이다</h3>
+            <article>
+                <h4>간단하다</h4>
+                <p>짧은 설명이다</p>
+            </article>
+            <article>
+                <h4>빠르다</h4>
+                <p>짧은 설명이다</p>
+            </article>
+            <article>
+                <h4>확장된다</h4>
+                <p>짧은 설명이다</p>
+            </article>
+        </section>
+        
+    </main>
+    
+    <footer>
+        <p>© 2025  Split Hero이다</p>
+    </footer>
+</body>
+</html>

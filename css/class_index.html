@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1 */
+        a:link{color: #558bff;}
+        a:visited{color: #ac46ff;}
+        a:hover{color: #ff9a57;}
+        /* 2 */
+        input[type="checkbox"]:checked + label{ 
+            color: #298d0b;
+        }
+        /* 3 */
+        li:first-child{font-weight: bold;}
+        li:nth-child(3){color: #ff0000;}
+        /* 4 */
+        p:not(.notice){color: #949393;}
+    </style>
+</head>
+<body>
+    <h1>간단 실습</h1>
+    <h2>1) 링크 상태</h2>
+    <a href="#">예시 링크</a>
+
+    <h2>2) 체크박스 + label</h2>
+    <input type="checkbox" id="num2">
+    <label for="num2">약관에 동의합니다</label>
+
+    <h2>3) 리스트 선택</h2>
+    <ul>
+        <li>첫 번째 항목</li>
+        <li>두 번째 항목</li>
+        <li>세 번째 항목</li>
+    </ul>
+
+    <h2>4) 문단색상</h2>
+    <p>이 문단은 회색이다</p>
+    <p class="notice">이 문단은 .notice라서 기본 색상이다</p>
+</body>
+</html>

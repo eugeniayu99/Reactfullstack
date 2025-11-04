@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>BEM 기본 예제</title>
+<style>
+  /* 🔹 Block 
+  - 독립적인 UI 단위 (버튼, 카드, 네비게이션 등)
+- 재사용이 가능해야 함*/
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 16px;
+    width: 250px;
+    margin: 20px auto;
+    font-family: sans-serif;
+  }
+
+  /* 🔹 Element 
+  - Block의 일부이며, 독립적으로 사용되지 않음
+- Block 이름 뒤에 `__`(언더스코어 두 개)를 붙인다*/
+  .card__title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .card__content {
+    color: #555;
+  }
+
+  /* 🔹 Modifier 
+  - 색상, 크기, 상태 등 변형된 버전을 의미
+- `-`(하이픈 두 개)를 붙인다*/
+  .card--highlight {
+    background-color: #fef5e7;
+    border-color: #f39c12;
+  }
+</style>
+</head>
+<body>
+  <div class="card card--highlight">
+    <div class="card__title card__title--font">공지사항</div>
+    <div class="card__content">다음 주 휴강합니다.</div>
+  </div>
+</body>
+</html>

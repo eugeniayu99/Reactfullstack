@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>구조 의사 클래스</title>
+<style>
+  ul li:first-child {
+    font-weight: bold;
+    color: #2980b9;
+  }
+
+  ul li:nth-child(2) {
+    color: #e74c3c;
+  }
+
+  p:first-of-type {
+    color: #16a085;
+  }
+
+  p:nth-of-type(2) {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+  <h2>구조 의사 클래스 예제</h2>
+
+  <ul>
+    <li>첫 번째 항목</li>
+    <li>두 번째 항목</li>
+    <li>세 번째 항목</li>
+  </ul>
+
+  <p>첫 번째 문단</p>
+  <p>두 번째 문단</p>
+  <div>이건 div라서 p:nth-of-type에 포함되지 않음</div>
+</body>
+</html>
