@@ -1,0 +1,66 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+.container{
+	width: 100%;
+	height: 100vh;
+	
+}
+
+/******* header *******/
+header{
+	background: #000;
+	color: #fff;
+	display: flex;
+	align-items: center;
+}
+/** header-contants **/
+.header-contants{
+	display: flex;
+	align-items: center;
+	height: 80px;
+	margin-left: 35px;
+	flex: 1
+}
+/* gnb-riot */
+.gnb-riot{
+	cursor: pointer; 
+}
+.gnb-riot img{
+	width: 75px;
+	filter: brightness(0) invert(1); 
+}
+.gnb-riot:hover img{
+	filter: brightness(1) invert(0);
+}
+/* logo */
+h1.logo{
+	margin-left: 20px;
+}
+/* nav */
+nav{
+	margin-left: 30px;
+}
+nav .lnbBox{
+	display: flex;
+    align-items: center;
+    gap: 15px;
+	cursor: pointer;
+}
+nav .lnbBox li{
+	font-family: "Paperozi", sans-serif;
+	font-size: 13px;
+}
+/** rightBtn **/
+.rightBtn{
+	margin-right: 35px;
+}
+.rightBtn button > img{
+	width: 25px;
+	filter: brightness(0) invert(1);
+}
