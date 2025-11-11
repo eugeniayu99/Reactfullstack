@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 12px;
+        }
+        nav{
+            background: #000;
+
+        }
+        .hero{}
+        .promo{}
+    </style>
+</head>
+<body>
+    <div class="grid" style="display: grid; grid-template-columns: repeat(4,1fr);">
+        <nav>Nav</nav>
+        <div class="hero" style="grid-column: 1/3;">HERO</div>
+        <div class="promo" style="grid-column: 3/5;">Promo</div>
+        <section class="feed" style="grid-column: 2/4;">
+            <div class="card">피드1</div>
+            <div class="card">피드2</div>
+            <div class="card">피드3</div>
+        </section>
+    </div>
+</body>
+</html>

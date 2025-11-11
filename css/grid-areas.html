@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+    display: grid;
+    
+    /* 그리드 갯수, 크기 조정 */
+    grid-template-columns: repeat(4, 1fr);
+    
+    /* 그리드 템플릿 */
+    grid-template-areas:
+      "nav nav nav nav"
+      "hero hero promo promo"
+      "quik feed feed ads";
+
+    gap: 10px;
+    padding: 16px;
+  }
+  nav{
+    grid-area: nav;
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .container > div{
+    border-radius: 8px;
+    padding: 20px;
+    height: 150px;
+  }
+  .hero{
+    grid-area: hero;
+    background: #ffe395; 
+  }
+  .promo{
+    grid-area: promo;
+    background: #a6b6ff;
+  }
+  .quik{
+    grid-area: quik;
+    background: #dde3fd;
+  }
+  .feed{
+    grid-area: feed;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    background: #d7e6eb;
+  }
+  .feed > .card{
+    background: #6eadff;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 5px;
+  }
+  .ads{
+    grid-area: ads;
+    background: #fffac8;
+  }
+    </style>
+</head>
+<body>
+    <!-- 4열 기반에서 일부 요소는 2열, 3열을 병합해서 사용
+        상단 : 내비게이션(전체 너비)
+        두번째 줄  : hero(2열 병합), promo(2열 병합)
+        세번째 줄 : 좌측 1열 : quik-links, 중앙 : feed(2열), 우측 : ads(1열) 
+        feed 내부는 중첩 그리드 카드(가로 3열) 배치 -->
+
+    <div class="container">
+        <nav>네비게이션</nav>
+        <div class="hero">hero(2열 병합)</div>
+        <div class="promo">promo(2열 병합)</div>
+        <div class="quik">Quik Links</div>
+        <div class="feed">
+            <div class="card">피드1</div>
+            <div class="card">피드2</div>
+            <div class="card">피드3</div>
+            <div class="card">피드4</div>
+            <div class="card">피드5</div>
+            <div class="card">피드6</div>
+        </div>
+        <div class="ads">광고 영역</div>
+    </div>
+</body>
+</html>

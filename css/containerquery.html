@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>@media vs @container 비교</title>
+<style>
+  body { margin: 0; font-family: system-ui, sans-serif; }
+  .outer { border: 3px solid #2980b9; margin: 20px; padding: 10px; }
+  .inner { background: #d6eaf8; padding: 20px; text-align: center; font-size: 16px; }
+
+  /* ✅ 미디어 쿼리: 브라우저 전체 폭 기준 */
+  @media (min-width: 700px) {
+    .inner { background: #a9cce3; font-size: 22px; }
+  }
+
+  /* ✅ 컨테이너 쿼리: .outer 요소 폭 기준 */
+  .outer { container-type: inline-size; }
+  @container (min-width: 500px) {
+    .inner { background: #7fb3d5; font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner">컨테이너 쿼리 vs 미디어 쿼리</div>
+  </div>
+</body>
+</html>

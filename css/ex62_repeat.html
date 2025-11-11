@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            /* grid-template-columns: 1fr 1fr 1fr 1fr; 와 동일*/
+            gap: 12px;
+            padding: 20px;
+        }
+        .item{
+            background: #3498db;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1번</div>
+        <div class="item">2번</div>
+        <div class="item">3번</div>
+        <div class="item">4번</div>
+    </div>
+</body>
+</html>
