@@ -226,10 +226,10 @@ section.playImg .playImg-textWrap > button:hover{
 /*** 챔피언을 선택하세요 ***/
 .contents.champion {
 	display: flex;
+	margin: 80px auto;
 	justify-content: center;
 	align-items: center;
-	gap: 50px;
-	margin: 50px 0;
+	gap: 20px;
 }
 .contents.champion .champion-choice{
 	display: flex;
