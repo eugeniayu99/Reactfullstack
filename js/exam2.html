@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 농구공이 25개가 있습니다. 한박스에 4개씩 담을 수 있다면 필요한 박스의 개수를 구하세요.
+
+       /* 내가 푼거
+        let balls = 25;
+
+        let oneBox = 4;
+
+        let totalBox = Math.ceil(balls/oneBox);
+
+        console.log(`필요한 박스의 개수 : ${totalBox}개`)*/
+
+        // 해답
+        let totalBalls = 25;
+        let boxCapacity = 4;
+        let remain = totalBalls % boxCapacity;
+
+        let boxCount = (remain === 0) ? totalBalls / boxCapacity : Math.floor(totalBalls / boxCapacity) + 1;
+        console.log(`필요한 박스의 개수 : ${boxCount}개`)
+
+        // 영화관에서 학생은 20% 할인된 가격, 성인은 정가를 낸다.
+        // 티켓 가격이 12000원일 때 나이에 따라 할인 된 티켓 가격을 계산하세요.
+        // age = 17; age = 22;
+        // 삼항연산자로 풀기
+        let ticket = 12000;
+        let age = 17;
+        //let bge = 22;//
+
+        let ticketP = age >= 20 ? ticket : ticket*0.8;
+        console.log(ticketP);
+
+
+
+    </script>
+</body>
+</html>
