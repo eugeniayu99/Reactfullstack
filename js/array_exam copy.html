@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 정수 배열 [1,2,3,4,4,5,5,5]에서 중복된 숫자를 제거하세요.
+        let arr = [1,2,3,4,4,5,5,5];
+        let result = [...new Set(arr)];
+        console.log(result);
+        
+        let result2 = [];
+        for(let v of arr){
+            if(!result2.includes(v)){
+                result2.push(v);
+            }
+        }
+        console.log(result2);
+    </script>
+</body>
+</html>
