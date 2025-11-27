@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flexBox{display: flex; gap: 5px;}
+        .resultBox {background-color: #000; color: #fff; width: 500px; height: 500px; display: none;}
+    </style>
+</head>
+<body>
+    <div class="flexBox">
+        <form id="gugudanForm">
+            <label for="">
+                단:
+                <input id="numInput" type="text" name="number">
+            </label>
+
+            <button type="submit">계산시작</button>
+            <button type="reset">숨기기</button>
+        </form>
+        
+    </div>
+    <hr>
+    <div class="resultBox">
+
+    </div>
+    <script>
+        const gugudanForm = document.querySelector('#gugudanForm');
+        const num = document.querySelector('#numInput');
+        const result = document.querySelector('.resultBox');
+
+        gugudanForm.addEventListener("submit", function(e){
+            e.preventDefault(); 
+
+            const n = Number(num.value);  
+
+            if(n > 0 && n < 10){  
+                let a = "";              
+
+                for(let i = 1; i <= 9; i++){
+                    a += `${n} x ${i} = ${n * i}<br>`;
+                }
+
+                result.innerHTML = a;
+                result.style.display = "block"
+            } else{
+                alert("1~9 사이의 정수를 입력하세요.");
+            }
+            
+
+        });
+
+        gugudanForm.addEventListener("reset", function(e){
+            result.style.display = "none"
+        });
+        /*
+            const form = document.querySelector('#gugudanForm');
+            const numInput = document.querySelector('#numInput');
+            const resultBox = document.querySelector('.resultBox');
+
+            // 구구단 출력 함수
+            function printGugudan(n) {
+                let output = "";
+                for (let i = 1; i <= 9; i++) {
+                    output += `${n} x ${i} = ${n * i}<br>`;
+                }
+                return output;
+            }
+
+            // 제출 이벤트
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const n = Number(numInput.value);
+
+                if (n > 0 && n < 10) {
+                    resultBox.innerHTML = printGugudan(n);
+                } else {
+                    resultBox.textContent = "1~9 사이의 정수를 입력하세요.";
+                }
+
+                resultBox.style.display = "block";
+            });
+
+            // 리셋 이벤트
+            form.addEventListener("reset", () => {
+                resultBox.style.display = "none";
+            });
+        */
+        
+    </script>
+</body>
+</html>

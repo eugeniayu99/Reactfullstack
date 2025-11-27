@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: 0 auto;
+        }
+        ul{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th class="su">수1</th>
+            <td><input type="number" id="su1" placeholder="정수만 입력하세요"></td>
+        </tr>
+        <tr>
+            <th class="su">수2</th>
+            <td><input type="number" id="su2" placeholder="정수만 입력하세요"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <ul>
+                    <li><input type="button" id="btnPlus" value="+"></li>
+                    <li><input type="button" id="btnMinus" value="-"></li>
+                    <li><input type="button" id="btnMulti" value="*"></li>
+                    <li><input type="button" id="btnDiv" value="/"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>결과</th>
+            <td><input type="text" id="result"></td>
+        </tr>
+    </table>
+
+    <script>
+        function cal(n){
+            const num1 = Number(document.querySelector("#su1").value);
+            const num2 = Number(document.querySelector("#su2").value);
+           const result = document.querySelector("#result")
+        
+            if(n === '+'){
+                result.value = num1 + num2;
+            } else if(n === '-'){
+                result.value = num1 - num2;
+            } else if(n === '*'){
+                result.value = num1 * num2;
+            } else if(n === '/'){
+                result.value = num2 !== 0? num1 / num2 : "0으로 나눌 수 없음";
+            }
+        }
+
+        document.querySelector("#btnPlus").addEventListener("click", ()=>{
+            cal('+');
+        });
+        document.querySelector("#btnMinus").addEventListener("click", ()=>{
+            cal('-');
+        });
+        document.querySelector("#btnMulti").addEventListener("click", ()=>{
+            cal('*');
+        });
+        document.querySelector("#btnDiv").addEventListener("click", ()=>{
+            cal('/');
+        });
+        
+    </script>
+</body>
+</html>
