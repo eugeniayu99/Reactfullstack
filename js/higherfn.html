@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 고차함수
+        //1. 다른 함수를 인자로 받거나, 함수를 반환(return)하는 함수
+
+        setTimeout(function(){
+            console.log("1초뒤에 실행된다.");
+        },1000);
+        // setTimeout() --> 고차함수
+        // function(){...} -> 인자로 넘겨진 함수(콜백함수)이다. 
+        
+        const arr = [1,2,3];
+        arr.forEach(function(item){
+            console.log(`아이템 : ${item}`);
+        });
+
+        // forEach() -> 고차함수
+        // function(){...} -> 콜백함수
+
+        // 직접 고차함수 만들어 보기(인자로 함수를 받는다)
+        function repeat(n, action){
+            for(let i = 0; i < n; i++){
+                action(i); // action이 함수다
+            }
+        }
+        // 숫자 로그찍기
+        repeat(5, function(i){
+            console.log(i, "번째 반복이다");
+        })
+        //repeat이 고차함수 function이 콜백함수
+
+        // 배열에 값 넣기
+        const result = [];
+        repeat(5, function(i){
+            result.push(i*2);
+        })
+
+        console.log(result);
+
+        // repeat은 "반복한다"라는 공통구조를 가지고 있다.
+        // 각 반복마다 무엇을 할지는 콜백으로부터 외부에 위임을 한 구조
+
+        // "함수를 반환하는 함수" 예제
+        // 1. 함수를 정의한다.
+        // 3. 정의한 쪽으로 올라온다. - 호출하면서 전달한 값을 매개변수에 넣는다. *x에 5(add5 실행)를 넣는다.
+        // 4. 기능을 실행 5 + y
+        function makeAdder(x){
+            return function(y){
+                return x + y;
+            }
+        }
+        // 2. 함수를 호출한다. - 전달할 값이 있으면 전달
+        /* 5. 호출한 쪽으로 돌아온다.
+            const add55 = function(y){
+                return 5 + y;
+            }
+        */
+        const add5 = makeAdder(5);
+        
+        console.log(add5(3)); // 3은 y값으로 //8
+        
+        const add10 = makeAdder(10);
+        console.log(add10(3)); // 3은 y값으로 //13
+
+        // "설정값을 기억하는 함수"와 같은 방식으로 실무에서는 많이 쓰인다.
+
+        // 실무에서 고차 함수가 많이 쓰이는 곳
+        // 1. 이벤트 처리
+        // addEventListener("이벤트", 콜백함수);
+        
+        // 특정 최소 나이 이상만 남기는 필터 함수 만들기
+        // makeAgeFilter(minAge)라는 함수만들기
+        // 이 함수는 minAge 인자로 받아서 age 프로퍼티를 가진 객체 배열에서 age >= minAge인 사람만 남기는 필터함수를 반환한다.
+
+        const users = [
+            {name : 'A', age : 15},
+            {name : 'B', age : 20},
+            {name : 'C', age : 30},
+        ];
+
+        function makeAgeFilter(minAge){
+            return function(user){
+                return user.age >= minAge;
+            };
+        }
+
+        const adultFilter = makeAgeFilter(18);
+        /*
+            const adultFilter = function(user){
+                return user.age >= minAge;
+            }
+        */
+        const adult = users.filter(adultFilter);
+        /*
+            const adult = users.filter(function(user){
+                return user.age >= minAge;
+            });    
+        */
+
+        console.log(adult);
+
+        
+
+
+
+    </script>
+</body>
+</html>
