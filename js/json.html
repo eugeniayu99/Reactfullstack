@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 문자열 value 넣을 반드시 쌍따옴표를 써야 한다.
+        let person = {
+            "name" : "홍길동",
+            "age" : 20,
+            "isStudent" : true,
+            "scores" : [90,25,100],
+            "porofile" : {
+                "email" : "test@test.com",
+                "phone" : "010-1234-5678",
+            },
+            // 마지막에 쉼표 붙이면 안된다.
+            "etc" : null
+        }
+
+        // js객체에서 프로퍼티를 사용하는 것처럼 사용할 수 있다.
+        console.log(person.name);
+        console.log(person.scores[2]);
+        console.log(person.porofile.phone);
+    </script>
+</body>
+</html>
