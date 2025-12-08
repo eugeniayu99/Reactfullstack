@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav li{
+            display: inline-block;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        .nav li.active{
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    ul에다 이벤트 리스너를 한번만 등록한다.
+    사용자가 클릭한 li에 active 클래스를 추가한다.
+    나머지 모든 형제 li에서 active클래스를 제거한다.
+    a를 클릭해도 같은 동작이 수행되어야 한다. 
+    -->
+    <ul class="nav" id="nav">
+        <li class="active"><a href="#home">홈</a></li>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#products">상품</a></li>
+        <li><a href="#contact">문의</a></li>
+    </ul>
+    
+    <script>
+        const nav = document.querySelector('#nav');
+
+        nav.addEventListener('click',function(event){
+            const li = event.target.closest('li');
+            if(!li) return;
+
+            const allLi = nav.querySelectorAll('li');
+            allLi.forEach(item => item.classList.remove('active'));
+
+            li.classList.add('active');
+        });
+    </script>
+</body>
+</html>

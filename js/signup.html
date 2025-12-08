@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #f6f6f6;
+            padding: 40px;
+        }
+        .container{
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+        }
+        label{
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input{
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+        small{
+            color: red;
+            display: none;
+        }
+        button{
+            margin-top: 20px;
+            width: 95%;
+            padding: 12px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        이름, 이메일, 비밀번호 입력
+        비밀번호 최소길이 검사
+        이메일 형식 검사
+        경고메시지 출력
+        모든 조건 충족시 "가입 완료" 메시지를 출력
+    -->
+    <div class="container">
+        <h2>회원 가입</h2>
+        <label>이름</label>
+        <input id="nameInput" placeholder="이름입력">
+        <small id="nameError">이름을 입력해주세요.</small>
+
+        <label>이메일</label>
+        <input type="email" id="emailInput" placeholder="example@email.com">
+        <small id="emailError">올바른 이메일 주소를 입력해주세요.</small>
+
+        <label>비밀번호</label>
+        <input type="password" id="passwordInput" placeholder="8자리 이상 입력">
+        <small id="passwordError">비밀번호는 8자 이상이어야 합니다.</small>
+
+        <button id="signupBtn">가입하기</button>
+
+    </div>
+
+    <script>
+        // 가입하기 버튼을 눌렀을 때 이름 입력창에 내용이 입력이 안되어 있다면 small에 적힌 내용 보이게 하기 한글자라도 입력되면 다시 사라지게 하기.
+
+        const signupBtn = document.querySelector('#signupBtn');
+
+        const nameInput = document.querySelector('#nameInput');
+        const emailInput = document.querySelector('#emailInput');
+        const passwordInput = document.querySelector('#passwordInput');
+
+        const nameError = document.querySelector('#nameError');
+        const emailError = document.querySelector('#emailError');
+        const passwordError = document.querySelector('#passwordError');
+
+        // 이메일 정규식 (기본적인 형식 체크)
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        signupBtn.addEventListener("click",() => {
+            
+            let isValid = true;  // 전체 검사 통과 여부
+
+            // 🔹 이름 검사
+            if (nameInput.value.trim() === "") {
+                nameError.style.display = "block";
+                isValid = false;
+            } else {
+                nameError.style.display = "none";
+            }
+
+            // 🔹 이메일 형식 검사
+            if (!emailPattern.test(emailInput.value.trim())) {
+                emailError.style.display = "block";
+                isValid = false;
+            } else {
+                emailError.style.display = "none";
+            }
+
+            // 🔹 비밀번호 길이 검사
+            if (passwordInput.value.length < 8) {
+                passwordError.style.display = "block";
+                isValid = false;
+            } else {
+                passwordError.style.display = "none";
+            }
+
+            // 🔹 모든 조건 통과하면 가입 완료
+            if (isValid) {
+                alert("가입 완료!");
+            }
+        });
+
+        // 🔹 입력할 때 즉시 에러메시지 숨기기
+        nameInput.addEventListener("input", () => {
+            if (nameInput.value.trim() !== "") nameError.style.display = "none";
+        });
+
+        emailInput.addEventListener("input", () => {
+            if (emailPattern.test(emailInput.value.trim())) emailError.style.display = "none";
+        });
+
+        passwordInput.addEventListener("input", () => {
+            if (passwordInput.value.length >= 8) passwordError.style.display = "none";
+        });
+
+    </script>
+</body>
+</html>

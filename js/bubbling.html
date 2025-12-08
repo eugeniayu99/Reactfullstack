@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent" style="padding: 20px; background: lightblue;">
+        parent
+        <button id="child">Child Button</button>
+    </div>
+    <script>
+        // div를 클릭했을 때 "부모 div 클릭 이벤트 발생"
+        const parent = document.querySelector("#parent");
+        const child = document.querySelector("#child");
+        //div클릭 했을때
+        parent.addEventListener("click", function(){
+            console.log("부모 div 클릭 이벤트 발생");
+        });
+        // button클릭 했을때
+        // 이벤트 처리 함수의 매개변수로 발생한 이벤트의 정보를 받을 수 있다.
+        // 매개변수의 이름은 아무거나 작성해도 문제는 안된다.
+        // event, e 라고 쓰는 편이다.
+        child.addEventListener("click",function(event){
+            console.log("button 클릭 이벤트 발생");
+            event.stopPropagation(); // 여기서 상위로 전파를 막는다.
+        });
+        // 버블링현상
+        // 버튼에서 발생한 클릭이 위로 올라가면서(parent까지) 부모의 클릭 이벤트도 같이 실행되기 때문이다.
+
+        // 실무에서는 팝업 안에 있는 버튼 클릭시 , 배경 영역의 클릭 이벤트가 같이 실행되면 안되는 경우에 자주 사용한다.
+        // ex) 버튼안에 버튼이 또 있는 경우  
+    </script>
+</body>
+</html>
