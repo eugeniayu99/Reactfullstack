@@ -5,13 +5,16 @@ import './App.css'
 import HandlerCounter from './components/HandlerCounter'
 import EarlyReturnExample from './components/EarlyReturnExample'
 import TernaryExample from './components/TernaryExample'
+import ListLengthExample from './components/ListLength'
+import KeyDifferenceDemo from './components/KeyDifferenceDemo'
+import Todo from './components/Todo'
 
 function App() {
   
 
   return (
     <>
-      <HandlerCounter />
+      {/* <HandlerCounter /> */}
       <Section>
         <EarlyReturnExample />
       </Section>
@@ -19,6 +22,19 @@ function App() {
       <Section>
         <TernaryExample />
       </Section>
+
+      <Section>
+        <ListLengthExample />
+      </Section>
+
+      <Section>
+        <KeyDifferenceDemo />
+      </Section>
+
+      <Section>
+        <Todo />
+      </Section>
+
     </>
   )
 }
